@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <script>
+
+        function computerPlay() {
+            Math.random();
+        }
+
+        function playRound(playerSelection, computerSelection) {
+
+            switch (playerSelection, computerSelection) {
+                case 'rock', 'rock':
+                    console.log("It's a draw!");
+                break;
+                case 'rock', 'paper':  
+                    console.log("You lose!");
+                break;
+                case 'rock', 'scissors':
+                    console.log("You win!");
+                break;
+                case 'paper','paper':
+                    return draw;
+                    console.log("It's a draw!");
+                break;
+                case 'paper','scissors':
+                    return loss;
+                    console.log("You lose!");
+                break;
+                case 'paper', 'rock':
+                    return win;
+                    console.log("You win!");
+                break;
+                case 'scissors', 'scissors':
+                    return draw;
+                    console.log("It's a draw!");
+                break;
+                case 'scissors', 'rock':
+                    return loss;
+                    console.log("You lose!");
+                break;
+                case 'scissors', 'paper':
+                    return win;
+                    console.log("You win!");
+                break;
+                default: console.log("Something went wrong! Check your spelling!");
+
+
+            }
+                 
+
+        }
+
+
+
+
+
+
+    </script>
+</html>
