@@ -2,6 +2,9 @@
 <html>
     <script>
 
+
+             //  The computer picks a choice at random
+
         function computerPlay() {
             let computerSelection = Math.random();
             if (computerSelection < 0.34) {
@@ -13,15 +16,20 @@
             }
             return computerSelection;
             }
+
+            //  The user enters an option
+
+        function playRound(playerSelection) {
+
             
 
-        function playRound(playerSelection, computerSelection) {
-            
             //  Accounting for case sensitivity
-            playerSelection = playerSelection.toLowerCase;
+            //playerSelection = playerSelection.toLowerCase;
 
-            //  Game mechanics. Considered using a switch statement 
-            //  instead, but this seemed more elegant.
+            //  Game mechanics
+
+            
+
             if (playerSelection === 'rock') {
                 if (computerSelection ==='rock') {
                     return 'It\'s a draw!';
@@ -48,15 +56,15 @@
                 } else 
                     return 'It\'s a draw!';
 
-            } else
-                console.log('Something is not right. Please check your spelling!');
-
+            } else {
+                return 'Something is not right. Please check your spelling!';
+            }
         }
 
+//playerSelection = 'rock';
+//computerSelection = 'rock';
+//console.log(playRound(playerSelection))
 
-const playerSelection = 'rock'
-const computerSelection = computerPlay()
-console.log(playRound(playerSelection, computerSelection))
 
 
 
