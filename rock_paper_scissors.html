@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html>
+
+    <head>
+
+        <meta charset="UTF-8">
+    
+        <title>Rock Paper Scissors!</title>
+    
+    </head>
+    <body>
+
     <script>
 
+        let computerSelection = 0;
+        let playerSelection = 0;
+        let computerScore = 0;
+        let playerSore = 0;
+        let result = 0;
 
-             //  The computer picks a choice at random
+             //  This function lets the computer pick a number 
+             //  and then convert it into either rock, paper och scissors
 
         function computerPlay() {
-            let computerSelection = Math.random();
+            computerSelection = Math.random();
             if (computerSelection < 0.34) {
                 computerSelection = 'rock';
             } else if (computerSelection <= 0.67) {
@@ -17,22 +33,25 @@
             return computerSelection;
             }
 
-            //  The user enters an option
+            //  The user enters 'rock', 'paper' or 'scissors' as a parameter
 
         function playRound(playerSelection) {
 
-            
+            //  This line accounts for case sensitivity
+            playerSelection = playerSelection.toLowerCase();
 
-            //  Accounting for case sensitivity
-            //playerSelection = playerSelection.toLowerCase;
+            // The computer picks an option using the computerPlay function
 
-            //  Game mechanics
+            computerPlay();
 
-            
+            console.log('The computer picked ' + computerSelection + '!');
+
+            //  Game mechanics 
 
             if (playerSelection === 'rock') {
-                if (computerSelection ==='rock') {
-                    return 'It\'s a draw!';
+                if (computerSelection =='rock') {
+                    result = 'draw';
+                    return result;
 
                 } else if (computerSelection === 'paper'){
                     return 'Oh-no! A loss!';
@@ -61,14 +80,26 @@
             }
         }
 
-//playerSelection = 'rock';
-//computerSelection = 'rock';
-//console.log(playRound(playerSelection))
 
+        //This function loops the playRound function 5 times, adding points 
+        //to the player or the computer, then displaying it. 
 
+        function game() {
 
+            for (i = 0; i <= 5; i++) {
+                playRound('rock');
+                if (result = 'win') {
+                    playerScore++
+                } else if (result = 'loss') {
+                    computerScore++
+                } else { 
 
+                }
+            }
+            return 'Computer: ' + computerScore + '. Player: ' + playerScore + ".";
+        }
 
 
     </script>
+    </body>
 </html>
