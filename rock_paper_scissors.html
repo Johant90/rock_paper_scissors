@@ -16,7 +16,6 @@
         let playerSelection = 0;
         let computerScore = 0;
         let playerScore = 0;
-        let result = 0;
 
              //  This function lets the computer pick a number 
              //  and then convert it into either rock, paper och scissors
@@ -92,18 +91,20 @@
         function game() {
 
             for (i = 0; i <= 5; i++) {
-                playRound('rock')
-                console.log('Computer: ' + computerScore + '. Player: ' + playerScore + ".");
+                playRound(prompt("Rock, paper, scissors?"));
+                alert('Computer: ' + computerScore + '. Player: ' + playerScore + ".");
             }
 
             if (playerScore > computerScore) {
-                console.log("You beat the computer! Good job.");
+                alert("You beat the computer! Good job.");
             } else if (playerScore < computerScore) {
-                console.log("You lost against the computer. Try again!")
+                alert("You lost against the computer. Try again!")
             } else if (playerScore === computerScore) {
-                console.log("You came out equal against the computer!");
+                alert("You came out equal against the computer!");
             }
         }
+
+        game();
 
 
     </script>
