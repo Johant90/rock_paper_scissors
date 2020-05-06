@@ -15,7 +15,7 @@
         let computerSelection = 0;
         let playerSelection = 0;
         let computerScore = 0;
-        let playerSore = 0;
+        let playerScore = 0;
         let result = 0;
 
              //  This function lets the computer pick a number 
@@ -45,35 +45,41 @@
             computerPlay();
 
             console.log('The computer picked ' + computerSelection + '!');
+            console.log('You picked ' + playerSelection + "!");
 
             //  Game mechanics 
 
             if (playerSelection === 'rock') {
                 if (computerSelection =='rock') {
-                    result = 'draw';
-                    return result;
+                    return "This round is a draw!";
 
                 } else if (computerSelection === 'paper'){
-                    return 'Oh-no! A loss!';
+                    computerScore++;
+                    return "You lose this round!";
                 } else 
-                    return 'Yay! You win!';
+                    playerScore++;
+                    return "You win this round!";
 
             } else if (playerSelection === 'paper') {
                 if (computerSelection === 'rock') {
-                    return 'Yay! You win!';
+                    playerScore++;
+                    return "You win this round!";
                 } else if (computerSelection === 'paper' ){  
-                    return 'It\'s a draw!';
+                    return "This round is a draw!";
 
                 } else 
-                    return 'Oh-no! A loss!';
+                    computerScore++;
+                    return "You lose this round!";
 
             } else if (playerSelection === 'scissors') {
                 if (computerSelection === 'rock' ) {
-                    return 'Yay! You win!';
-                } else if (computerSelection === 'paper' ){  
-                    return 'Oh-no! A loss!';
+                    playerScore++;
+                    return "You win this round!";
+                } else if (computerSelection === 'paper' ){ 
+                    computerScore++;
+                    return "You lose this round!";
                 } else 
-                    return 'It\'s a draw!';
+                    return "This round is a draw!";
 
             } else {
                 return 'Something is not right. Please check your spelling!';
@@ -81,22 +87,22 @@
         }
 
 
-        //This function loops the playRound function 5 times, adding points 
-        //to the player or the computer, then displaying it. 
+        //This function loops the playRound function 5 times and then declares a winner.
 
         function game() {
 
             for (i = 0; i <= 5; i++) {
-                playRound('rock');
-                if (result = 'win') {
-                    playerScore++
-                } else if (result = 'loss') {
-                    computerScore++
-                } else { 
-
-                }
+                playRound('rock')
+                console.log('Computer: ' + computerScore + '. Player: ' + playerScore + ".");
             }
-            return 'Computer: ' + computerScore + '. Player: ' + playerScore + ".";
+
+            if (playerScore > computerScore) {
+                console.log("You beat the computer! Good job.");
+            } else if (playerScore < computerScore) {
+                console.log("You lost against the computer. Try again!")
+            } else if (playerScore === computerScore) {
+                console.log("You came out equal against the computer!");
+            }
         }
 
 
